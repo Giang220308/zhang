@@ -11,23 +11,30 @@
   height: 100%;
   padding: 0;
   margin: 0;
-  
+  overflow: hidden;
 }
 canvas {
   position: absolute;
   width: 100%;
   height: 100%;
+
 }
+.text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      pointer-events: none; /* để không chặn click lên canvas */
+    }
 .chu{
     color: rgb(214, 95, 139);
-    text-align: center;
-    line-height: 1000%;
+    margin: 0;
 }
 .tru{
     color: rgb(214, 95, 135);
-    text-align: center;
+    margin: 0;
     font-size: x-small;
-    line-height: 1000%;
 }
 
   </style>
@@ -35,8 +42,10 @@ canvas {
  
  <BODY>
   <canvas id="pinkboard"></canvas>
-  <h1 class="chu">Nguyễn Hồng Nhung</h1>
-  <h2 class="tru">I LOVE YOU</h2>
+  <div class="text-container">
+    <h1 class="chu">Nguyễn Hồng Nhung</h1>
+    <h2 class="tru">I LOVE YOU</h2>
+  </div>
   <script>
   /*
  * Settings
@@ -45,9 +54,9 @@ var settings = {
   particles: {
     length:   600, // maximum amount of particles
     duration:   3.25, // particle duration in sec
-    velocity: 180, // particle velocity in pixels/sec
+    velocity: 150, // particle velocity in pixels/sec
     effect: -0.75, // play with this for a nice effect
-    size:      40, // particle size in pixels
+    size:      30, // particle size in pixels
   },
 };
  
